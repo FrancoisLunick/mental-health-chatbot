@@ -1,6 +1,12 @@
+from pathlib import Path
+
+prompts_dir = Path("prompts")
+
 def load_supportive_messages():
     
-    with open("prompts/supportive_messages.txt", "r") as file:
+    filepath = prompts_dir / "supportive_messages.txt"
+    
+    with open(filepath, "r") as file:
         lines = list(file)
         
         cleaned_lines = [line.strip() for line in lines]
