@@ -4,8 +4,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-print(os.getenv("GEMINI_API_KEY"))
-
 genai.configure(api_key = os.environ['GEMINI_API_KEY'])
 
 def gen_gemini_response(user_input: list[dict]) -> str:
