@@ -8,7 +8,7 @@ from chatbot import ChatCore
 chat_core = ChatCore()
 
 # Prints the welcome message
-print("Hey there welcome. Tell me how you are feeling today.\n\n")
+print("\nHey there welcome. Tell me how you are feeling today.\n\n")
 
 # Starts the loop to interact with the user
 while True:

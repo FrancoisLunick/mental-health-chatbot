@@ -77,7 +77,6 @@ class ChatCore:
             
             client_socket.connect((target_ip, target_port))
             
-            print("Success: You have internet")
             return True
         except socket.timeout:
             return False
