@@ -15,8 +15,6 @@ def log_user_and_bot_chat(user_input, bot_input):
         file.write(f"User: {user_input}\n")
         file.write(f"Bot: {bot_input}\n\n")
     
-    file.close
-    
 def get_timestamp():
     current_datetime = datetime.now()
     
