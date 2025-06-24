@@ -1,6 +1,6 @@
 from pathlib import Path
 
-prompts_dir = Path("prompts")
+prompts_dir = Path("resources")
 
 def load_supportive_messages():
     
@@ -12,5 +12,3 @@ def load_supportive_messages():
         cleaned_lines = [line.strip() for line in lines]
         
     return cleaned_lines
-
-load_supportive_messages()
