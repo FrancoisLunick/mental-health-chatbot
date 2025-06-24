@@ -1,3 +1,4 @@
+from prompts import load_supportive_messages
 import random
 
 class ChatCore:
@@ -8,6 +9,8 @@ class ChatCore:
             "anxious": "Let's take a deep breathe.", 
             "happy": "That's great to hear."
         }
+        
+        self.supportive_messages = load_supportive_messages()
     
     def detect_mood(self, user_input):
         user_input = user_input.lower()
@@ -23,4 +26,4 @@ class ChatCore:
         if mood in self.responses:
             return self.responses[mood]
         else:
-            return "I am here for you"
+            return random.choice(self.supportive_messages)
