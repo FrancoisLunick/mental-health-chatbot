@@ -1,4 +1,4 @@
-from chatbot.core import ChatCore
+from chatbot import ChatCore
 
 chat_core = ChatCore()
 
