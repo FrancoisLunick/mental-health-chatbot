@@ -13,7 +13,6 @@ class ChatCore:
         }
         
         self.convo_history = []
-        
         self.supportive_messages = load_supportive_messages()
     
     def detect_mood(self, user_input):
@@ -27,7 +26,7 @@ class ChatCore:
     def give_a_response(self, user_input):
         mood = self.detect_mood(user_input)
         
-        self.convo_history.append(f"user: {user_input}")
+        self.convo_history.append({"role": "user", "content": user_input})
         
         if mood in self.responses:
             return self.responses[mood]
@@ -54,10 +53,10 @@ class ChatCore:
         
         if self.is_there_internet():
             try:
-                self.convo_history.append(f"user: {user_input}")
+                self.convo_history.append({"role": "user", "content": user_input})
                 
                 response = gen_gemini_response(self.convo_history)
-                self.convo_history.append(f"AI: {response}")
+                self.convo_history.append({"role": "AI", "content": response})
                 
                 return response
             except Exception as e:
