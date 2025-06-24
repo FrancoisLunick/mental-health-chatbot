@@ -51,7 +51,8 @@ class ChatCore:
         if self.is_there_internet():
             try:
                 return gen_gemini_response(user_input)
-            except:
+            except Exception as e:
+                print(f"There's an error generating AI response: {e}")
                 return self.give_a_response(user_input)
         else:
             return self.give_a_response(user_input)
