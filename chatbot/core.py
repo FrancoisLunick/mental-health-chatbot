@@ -44,4 +44,16 @@ class ChatCore:
         except socket.timeout:
             return False
         
+    def chat(self, user_input):
+        if user_input == "":
+            return "What? is wrong? Let me help."
+        
+        if self.is_there_internet():
+            try:
+                return gen_gemini_response(user_input)
+            except:
+                return self.give_a_response(user_input)
+        else:
+            return self.give_a_response(user_input)
+            
             
