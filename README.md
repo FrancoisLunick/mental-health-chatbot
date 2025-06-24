@@ -15,7 +15,7 @@ Welcome to my AI-powered chatbot. This chatbot is designed to support mental wel
 
 ---
 
-## 💡 Future Improvements
+## Future Improvements
 
 - Add file-based logging for user/chat interactions  
 - Build a GUI using Tkinter or a web framework  
@@ -24,7 +24,7 @@ Welcome to my AI-powered chatbot. This chatbot is designed to support mental wel
 
 ---
 
-## 📝 License
+## License
 
 This project is open-source under the MIT License.
 
@@ -44,5 +44,5 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
 ---
 
-## ✨ Acknowledgements
+## Acknowledgements
 - **Google Gemini API**
