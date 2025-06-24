@@ -6,10 +6,6 @@ def clean_text(text):
     
     return text
 
-clean_user_text = clean_text("testing\n text\n")
-
-print(clean_user_text)
-
 def log_user_and_bot_chat(user_input, bot_input):
     with open("logs/chat_log.txt", "a") as file:
         file.write(f"User: {user_input}\n")
@@ -18,13 +14,6 @@ def log_user_and_bot_chat(user_input, bot_input):
 def get_timestamp():
     current_datetime = datetime.now()
     
-    print(f"The current date time is: {current_datetime}")
-    
     formatted_timestamp = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
     
-    print(formatted_timestamp)
-    
     return formatted_timestamp
-    
-
-get_timestamp()
