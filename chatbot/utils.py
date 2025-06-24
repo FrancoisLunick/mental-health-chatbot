@@ -38,8 +38,6 @@ def load_supportive_messages():
         
         cleaned_lines = [line.strip() for line in lines]
         
-    file.close
-        
     return cleaned_lines
 
 load_supportive_messages()
