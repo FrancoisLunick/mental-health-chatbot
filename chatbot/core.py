@@ -1,4 +1,4 @@
-from prompts import load_supportive_messages
+from .prompts import load_supportive_messages
 import random
 from gemini_client import gen_gemini_response
 import socket
