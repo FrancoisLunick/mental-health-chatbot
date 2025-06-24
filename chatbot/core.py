@@ -1,5 +1,7 @@
 from prompts import load_supportive_messages
 import random
+from gemini_client import gen_gemini_response
+import socket
 
 class ChatCore:
     
@@ -27,3 +29,19 @@ class ChatCore:
             return self.responses[mood]
         else:
             return random.choice(self.supportive_messages)
+        
+    def is_there_internet(self):
+        target_ip = '8.8.8.8'
+        target_port = 53
+        
+        try:
+            client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            
+            client_socket.connect((target_ip, target_port))
+            
+            print("Success: You have internet")
+            return True
+        except socket.timeout:
+            return False
+        
+            
