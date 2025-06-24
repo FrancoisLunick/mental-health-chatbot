@@ -8,11 +8,10 @@ print(os.getenv("GEMINI_API_KEY"))
 
 genai.configure(api_key = os.environ['GEMINI_API_KEY'])
 
-def gen_gemini_response(user_input: str) -> str:
+def gen_gemini_response(user_input: list[str]) -> str:
+    prompt = "\n".join([f"{msg['role'].capitalize()}: {msg['content']}" for msg in user_input])
     model = genai.GenerativeModel(model_name='gemini-1.5-flash')
-    response = model.generate_content(user_input)
+    response = model.generate_content(prompt)
     print(response.text)
     
     return response.text
-    
-print(gen_gemini_response("tell me about love"))
