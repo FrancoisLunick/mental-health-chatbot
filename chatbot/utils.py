@@ -1,10 +1,12 @@
+from datetime import datetime
+
 def clean_text(text):
     text = text.lower()
     text = "".join(text.split())
     
     return text
 
-clean_user_text = clean_text("testing text")
+clean_user_text = clean_text("testing text\n")
 
 print(clean_user_text)
 
@@ -14,3 +16,17 @@ def log_user_and_bot_chat(user_input, bot_input):
         file.write(f"Bot: {bot_input}\n\n")
     
     file.close
+    
+def get_timestamp():
+    current_datetime = datetime.now()
+    
+    print(f"The current date time is: {current_datetime}")
+    
+    formatted_timestamp = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
+    
+    print(formatted_timestamp)
+    
+    return formatted_timestamp
+    
+
+get_timestamp()
