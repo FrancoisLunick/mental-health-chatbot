@@ -2,11 +2,11 @@ from datetime import datetime
 
 def clean_text(text):
     text = text.lower()
-    text = "".join(text.split())
+    text = "".join(text.splitlines())
     
     return text
 
-clean_user_text = clean_text("testing text\n")
+clean_user_text = clean_text("testing\n text\n")
 
 print(clean_user_text)
 
